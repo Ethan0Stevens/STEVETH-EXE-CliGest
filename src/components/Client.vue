@@ -4,17 +4,17 @@
     <!-- Photo du client -->
     <q-item-section avatar>
       <q-avatar>
-        <img src="https://randomuser.me/api/portraits/thumb/women/9.jpg">
+        <q-img :src="client.picture.thumbnail"/>
       </q-avatar>
     </q-item-section>
 
     <!-- Nom, prénom et email du client -->
     <q-item-section>
       <q-item-label lines="1">
-        Marchand Pauline
+        {{ client.name.last}} {{client.name.first }}
       </q-item-label>
       <q-item-label caption lines="2">
-        pauline.marchand@divcom.ch
+        {{ client.email }}
       </q-item-label>
     </q-item-section>
 
@@ -27,6 +27,7 @@
 
 <script>
 export default {
-  name: 'CompClient'
+  name: 'CompClient',
+  props: ['client']
 }
 </script>

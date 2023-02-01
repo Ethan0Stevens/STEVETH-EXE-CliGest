@@ -585,7 +585,7 @@ Fonctionne comme les propriétés calculées
 Sert à calculer, trier, filtrer ou formater les donneés
  */
 const getters = {
-  getClients (state) {
+  clients: function (state) {
     return state.clients
   }
 }

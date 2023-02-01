@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
-
-import clients from './store-clients'
+import clients from './clients'
 
 /*
  * If not building with SSR mode, you can
@@ -19,7 +18,7 @@ export default function (/* { ssrContext } */) {
 
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: process.env.DEV
+    strict: process.env.DEBUGGING
   })
 
   return Store
