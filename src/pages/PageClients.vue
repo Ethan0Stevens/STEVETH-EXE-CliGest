@@ -25,13 +25,16 @@ export default {
     client: require('components/Client.vue').default
   },
   computed: {
+    // Mappage des getters du store
     ...mapGetters('clients', ['clients'])
   },
   methods: {
+    // Mappage des actions du store
     ...mapActions('clients', ['getClientsApi'])
   },
-  // Essai de générer la liste de clients depuis l'api à la creation de la page
+  // A la creation de la page
   created () {
+    // Essai de générer la liste de clients depuis l'api
     this.getClientsApi()
   }
 }
