@@ -30,7 +30,8 @@ export default {
   methods: {
     ...mapActions('clients', ['getClientsApi'])
   },
-  beforeMount () {
+  // Essai de générer la liste de clients depuis l'api à la creation de la page
+  created () {
     this.getClientsApi()
   }
 }

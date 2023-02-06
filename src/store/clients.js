@@ -571,6 +571,11 @@ Mutations : méthode qui manipulent les données
 Les mutations ne peuvent pas être asynchrones !!!
  */
 const mutations = {
+  /**
+   * Remplace l'ancienne liste de clients par celle de l'api
+   * @param state données du store
+   * @param clients les clients de l'api
+   */
   getClientsApi (state, clients) {
     state.clients = clients
   }
@@ -580,6 +585,10 @@ Actions : méthodes du magasin qui font appel aux mutations
 Elles peuvent être asynchrones !
  */
 const actions = {
+  /**
+   * Générer une liste de personnes aléatoires à l'aide de l'api de randomuser.me
+   * @param commit
+   */
   getClientsApi ({ commit }) {
     api
       .get('?results=100&nat=CH')
@@ -594,6 +603,11 @@ Fonctionne comme les propriétés calculées
 Sert à calculer, trier, filtrer ou formater les donneés
  */
 const getters = {
+  /**
+   * Getter de la liste de clients
+   * @param state
+   * @returns {*}
+   */
   clients: function (state) {
     return state.clients
   }
