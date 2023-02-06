@@ -17,7 +17,7 @@
 
 <script>
 
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'PageClients',
@@ -26,6 +26,12 @@ export default {
   },
   computed: {
     ...mapGetters('clients', ['clients'])
+  },
+  methods: {
+    ...mapActions('clients', ['getClientsApi'])
+  },
+  beforeMount () {
+    this.getClientsApi()
   }
 }
 </script>
